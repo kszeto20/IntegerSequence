@@ -6,7 +6,7 @@ public class Range implements IntegerSequence {
 
   public Range(int startVal, int endVal){
     start = startVal;
-    current = current;
+    current = startVal;
     end = endVal;
   }
 
@@ -19,10 +19,10 @@ public class Range implements IntegerSequence {
   }
 
   public boolean hasNext() {
-    if (current + 1 > end) {
-      return false;
+    if (current <= end) {
+      return true;
     }
-    return true;
+    return false;
   }
 
   public int next() {
