@@ -7,7 +7,7 @@ public class Range implements IntegerSequence {
   public Range(int startVal, int endVal){
     start = startVal;
     current = current;
-    end = endVal
+    end = endVal;
   }
 
   public void reset() {
