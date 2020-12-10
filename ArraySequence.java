@@ -8,6 +8,15 @@ public class ArraySequence implements IntegerSequence{
     currentIndex = 0;
   }
 
+  public ArraySequence (IntegerSequence otherseq) {
+    data = new int[otherseq.length()];
+    otherseq.reset();
+    for (int i = 0; i < data.length; i++) {
+      data[i] = otherseq.next();
+    }
+    otherseq.reset();
+  }
+
   public void reset() {
     currentIndex = 0;
   }
@@ -20,7 +29,9 @@ public class ArraySequence implements IntegerSequence{
     if (currentIndex < data.length){
       return true;
     }
-    return false;
+    else{
+      return false;
+    }
   }
 
   public int next() {
